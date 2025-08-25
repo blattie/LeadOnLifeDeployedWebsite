@@ -1,0 +1,538 @@
+:root {
+    --extra-small-font-size: calc(1rem + 0.15vmin);
+    --small-font-size: calc(1rem + 0.3vmin);
+    --medium-font-size: calc(1rem + 0.5vmin);
+    --large-font-size: calc(1rem + 7vmin);
+    --h1-size: calc(1rem + 2.7vmin);
+    --h2-size: calc(1rem + 1.9vmin);
+    --h3-size: calc(1rem + 1.4vmin);
+    --h4-size: calc(1rem + 0.7vmin);
+    --extra-small-spacing: 1vmin;
+    --small-spacing: 2vmin;
+    --medium-spacing: 5vmin;
+    --large-spacing: 10vmin;
+    --dark: rgb(44, 40, 37);
+    --dark-transparent: rgba(44, 40, 37, 0.2);
+    --darker-transparent: rgba(44, 40, 37, 0.4);
+    --bright-transparent: rgba(255, 255, 255, 0.4);
+    --black: black;
+    --white: white;
+    --bright-gray: rgb(245, 245, 245);
+    --accent: rgb(255, 191, 253); /*See if we can make this a moving gradient*/
+}
+
+@font-face {
+    font-family: 'Lexend';
+    src: url('./Lexend-VariableFont_wght.ttf');
+}
+
+* {
+    font-family: 'Lexend';
+    margin: 0px;
+    padding: 0px;
+    align-content: center;
+    text-align: center;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+snap-container-vertical-body {
+    height: 100vh; /* or 100dvh for better accuracy on mobile */
+    width: 100vw;
+    overflow: hidden; /* optional, to prevent scroll */
+}
+
+/* Extra small devices (phones, 600px and down) */
+@media only screen and (max-width: 600px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+/* Small devices (portrait tablets and large phones, 600px and up) */
+@media only screen and (min-width: 600px) and (max-width: 768px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+/* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) and (max-width: 992px) {
+    html {
+        font-size: 75%;
+    }
+}
+
+/* Large devices (laptops/desktops, 992px and up) */
+@media only screen and (min-width: 992px) and (max-width: 1200px) {
+    html {
+        font-size: 80%;
+    }
+}
+
+/* Extra large devices (large laptops and desktops, 1200px and up) */
+@media only screen and (min-width: 1200px) {
+    html {
+        font-size: 90%;
+    }
+}
+
+h1 {
+    font-size: var(--h1-size);
+}
+
+h2 {
+    font-size: var(--h2-size);
+}
+
+h3 {
+    font-size: var(--h3-size);
+}
+
+h4 {
+    font-size: var(--h4-size);
+}
+
+.h1-size {
+    font-size: var(--h1-size);
+}
+
+.h2-size {
+    font-size: var(--h2-size);
+}
+
+.h3-size {
+    font-size: var(--h3-size);
+}
+
+.h4-size {
+    font-size: var(--h4-size);
+}
+
+.extra-small-text {
+    font-size: var(--extra-small-font-size);
+}
+
+p {
+    font-size: var(--small-font-size);
+    margin-top: var(--extra-small-spacing);
+    margin-bottom: var(--extra-small-spacing);
+}
+
+.bg-dark {
+    background-color: var(--dark);
+}
+
+.bg-bright {
+    background-color: var(--bright-gray);
+}
+
+.text-dark {
+    color: var(--dark);
+}
+
+.text-bright {
+    color: var(--white);
+}
+
+a {
+    text-decoration: none;
+    transition: all .15s ease-in-out;
+}
+
+    a:hover {
+        transform: scale(1.04);
+    }
+
+.text-bright a {
+    color: var(--white);
+}
+
+    .text-bright a:link {
+        color: var(--white);
+    }
+
+    .text-bright a:visited {
+        color: var(--white);
+    }
+
+    .text-bright a:hover {
+        color: var(--white);
+    }
+
+button {
+    transition: all .15s ease-in-out;
+}
+
+    button:hover {
+        color: var(--accent);
+        cursor: pointer;
+        transform: scale(1.04);
+    }
+
+.vertical-padding-none {
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.vertical-margin-small {
+    margin-top: var(--small-spacing);
+    margin-bottom: var(--small-spacing);
+}
+
+.horizontal-margin-small {
+    margin-left: var(--small-spacing);
+    margin-right: var(--small-spacing);
+}
+
+.vertical-padding-small {
+    padding-top: var(--small-spacing);
+    padding-bottom: var(--small-spacing);
+}
+
+.horizontal-padding-small {
+    padding-left: var(--small-spacing);
+    padding-right: var(--small-spacing);
+}
+
+.vertical-margin-medium {
+    margin-top: var(--medium-spacing);
+    margin-bottom: var(--medium-spacing);
+}
+
+.horizontal-margin-medium {
+    margin-left: var(--medium-spacing);
+    margin-right: var(--medium-spacing);
+}
+
+.vertical-padding-medium {
+    padding-top: var(--medium-spacing);
+    padding-bottom: var(--medium-spacing);
+}
+
+.horizontal-padding-medium {
+    padding-left: var(--medium-spacing);
+    padding-right: var(--medium-spacing);
+}
+
+.vertical-margin-large {
+    margin-top: var(--large-spacing);
+    margin-bottom: var(--large-spacing);
+}
+
+.horizontal-margin-large {
+    margin-left: var(--large-spacing);
+    margin-right: var(--large-spacing);
+}
+
+.vertical-padding-large {
+    padding-top: var(--large-spacing);
+    padding-bottom: var(--large-spacing);
+}
+
+.horizontal-padding-none {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+.horizontal-padding-large {
+    padding-left: var(--large-spacing);
+    padding-right: var(--large-spacing);
+}
+
+.fill-parent-width {
+    width: 100%;
+}
+
+.fill-parent-height {
+    height: 100%;
+}
+
+.full-width {
+    width: 100vw;
+}
+
+.full-height {
+    height: 100vh;
+}
+
+.NavigationBar {
+    display: flex;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 768px) {
+    .NavigationBar {
+        padding-left: var(--medium-font-size);
+        padding-right: var(--medium-font-size);
+    }
+}
+
+.Footer {
+    align-content: center;
+    justify-content: space-between;
+}
+
+@media only screen and (max-width: 768px) {
+    .Footer {
+        padding-left: var(--medium-font-size);
+        padding-right: var(--medium-font-size);
+    }
+}
+
+.flex {
+    display: flex;
+}
+
+.item-gap-small {
+    gap: var(--small-spacing);
+}
+
+.flex-align-center {
+    align-items: center;
+    justify-content: center;
+}
+
+.flex-shrink-horizontal {
+    min-width: 0px;
+}
+
+.flex-shrink-vertical {
+    min-height: 0px;
+}
+
+.overlay-container {
+    position: relative;
+}
+
+.video-fill {
+    object-fit: cover;
+}
+
+.overlay {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    text-shadow: 3px 3px 3px var(--darker-transparent);
+}
+
+.overlay-NavigationBar {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    z-index: 99;
+}
+
+.bg-transparent-dark {
+    background-color: var(--dark-transparent);
+}
+
+.bg-transparent-darker {
+    background-color: var(--darker-transparent);
+}
+
+
+@media only screen and (max-width: 768px) {
+    .portfolio {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+.central-column {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .central-column {
+        max-width: 85vw;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .central-column {
+        max-width: 50vw;
+    }
+}
+
+.central-column-small {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media only screen and (max-width: 768px) {
+    .central-column-small {
+        max-width: 70vw;
+    }
+}
+
+@media only screen and (min-width: 768px) {
+    .central-column-small {
+        max-width: 55vw;
+    }
+}
+
+.download-button {
+    text-shadow: none;
+}
+
+    .download-button a {
+        text-shadow: none;
+    }
+
+        .download-button a:hover {
+            cursor: pointer;
+            transform: scale(1.04);
+            text-shadow: 3px 3px 3px var(--darker-transparent);
+        }
+
+.collapsible-button {
+    transition: all .15s ease-in-out;
+    border-style: none;
+    border-bottom: 1px solid;
+    border-top: 1px solid;
+    border-color: var(--white);
+    cursor: pointer;
+    -webkit-user-select: none; /* Safari */
+    -ms-user-select: none; /* IE 10 and IE 11 */
+    user-select: none; /* Standard syntax */
+}
+
+    .collapsible-button:hover {
+        color: var(--accent);
+        cursor: pointer;
+        transform: scale(1.04);
+    }
+
+.collapsible-content {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.2s ease-out;
+}
+
+.collapsible-button-state:before {
+    content: url(./media/arrow_down.svg);
+}
+
+.active .collapsible-button-state:before {
+    content: url(./media/arrow_up.svg);
+}
+
+.flex-vertical-container {
+    display: flex;
+    flex-direction: column; /* vertical stacking */
+}
+
+.flex-fill-parent {
+    flex: 1;
+}
+
+.align-bottom {
+    margin-top: auto;
+    bottom: auto;
+}
+
+.align-right {
+    margin-left: auto;
+    margin-right: 0;
+    align-content: end;
+    text-align: end;
+}
+
+.snap-container-vertical {
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
+}
+
+.snap-item {
+    scroll-snap-align: center;
+    overflow: hidden;
+}
+
+.animated-gradient-text {
+    font-weight: bold;
+    background: linear-gradient(270deg, #f1baff, #bafcff, #f7ffa1);
+    background-size: 600% 600%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    animation: gradientShift 3s ease infinite;
+}
+
+@keyframes gradientShift {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
+.no-select {
+    user-select: none;
+    -webkit-user-drag: none;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+}
+
+.phone {
+    width: 50vmin;
+    height: 50vmin;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    position: relative;
+    border-radius: 10%;
+    overflow: hidden;
+    background: var(--bright-transparent);
+    --fade-point: 50%;
+    mask: linear-gradient(#000 0%, #000 var(--fade-point), transparent 85%);
+    -webkit-mask: linear-gradient(#000 0%, #000 var(--fade-point), transparent 85%);
+}
+
+.titleImage {
+    width: 25vmin;
+    height: 25vmin;
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0px;
+    -webkit-filter: drop-shadow(3px 3px 3px var(--darker-transparent));
+    filter: drop-shadow(3px 3px 3px var(--darker-transparent));
+}
+
+.screen {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+    .screen img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+.parallax-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 200%;
+    background-image: url('media/clouds2.png');
+    background-size: cover;
+    background-position: center;
+    z-index: -1;
+    transform: translateY(0);
+    will-change: transform;
+}

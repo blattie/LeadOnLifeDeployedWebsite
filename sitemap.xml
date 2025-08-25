@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <url>
+    <loc>https://www.leadonlife.com/index.html</loc>
+    <xhtml:link
+               rel="alternate"
+               hreflang="fr"
+               href="https://www.leadonlife.com/fr/index.html"/>
+  </url>
+  <url>
+    <loc>https://www.leadonlife.com/privacy-policy.html</loc>
+    <xhtml:link
+               rel="alternate"
+               hreflang="fr"
+               href="https://www.leadonlife.com/fr/privacy-policy.html"/>
+  </url>
+  <url>
+    <loc>https://www.leadonlife.com/404.html</loc>
+    <xhtml:link
+               rel="alternate"
+               hreflang="fr"
+               href="https://www.leadonlife.com/fr/404.html"/>
+  </url>
+</urlset>
