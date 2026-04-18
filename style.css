@@ -283,23 +283,6 @@ button {
     }
 }
 
-.Header {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    z-index: 100;
-    text-align: left;
-}
-
-@media only screen and (max-width: 768px) {
-    .Header {
-        text-align: center;
-        padding-left: var(--medium-font-size);
-        padding-right: var(--medium-font-size);
-    }
-}
-
 .flex {
     display: flex;
 }
