@@ -2,6 +2,7 @@ body {
     padding: 0;
     margin: 0;
     overflow: hidden;
+    background: #262222;
 }
 
 #unity-container {
@@ -9,10 +10,11 @@ body {
     height: 100vh;
     padding: 0;
     margin: 0
+    background: #262222;
 }
 
 #unity-container.unity-desktop {
-    width: 50vw;
+    idth: 100vw;
     height: 100vh
 }
 
