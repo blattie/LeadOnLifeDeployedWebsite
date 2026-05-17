@@ -3,54 +3,48 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-    <title>Lead On Life</title>
+    <meta name="viewport" content="viewport-fit: cover" />
+
+    <title>{{{PRODUCT_NAME}}}</title>
     <link rel="shortcut icon" href="TemplateData/favicon.ico">
     <link rel="stylesheet" href="TemplateData/style.css">
   </head>
+
   <body>
-    <div id="unity-container" class="unity-desktop">
-      <canvas id="unity-canvas"></canvas>
-      <div id="unity-loading-bar">
-        <div id="unity-logo"></div>
-        <div id="unity-progress-bar-empty">
-          <div id="unity-progress-bar-full"></div>
+    <div id="main-container">
+      <div id="main-loading-bar">
+        <div class="Logo">
+            <img src="./TemplateData/Logo_Text.png">
+        </div>
+        <div id="main-progress-bar-empty">
+          <div id="main-progress-bar-full">
+          </div>
         </div>
       </div>
     </div>
-    <script>
-      var container = document.querySelector("#unity-container");
-      var canvas = document.querySelector("#unity-canvas");
-      var loadingBar = document.querySelector("#unity-loading-bar");
-      var progressBarFull = document.querySelector("#unity-progress-bar-full");
-      var buildUrl = "Build/";
-      var loaderUrl = buildUrl + "ef39ac50a0872407cd87f63d9126dd62.loader.js";
-      var config = {
-        dataUrl: buildUrl + "b617f99b7ec8d7e094547080506a36f8.data",
-        frameworkUrl: buildUrl + "c4c6a42ec6737fb9fc0179c061c375e0.framework.js",
-        codeUrl: buildUrl + "cd81a710d75c64a21f8d2eae8bbdfa1a.wasm",
-        streamingAssetsUrl: "StreamingAssets",
-        companyName: "Samuel Savaria",
-        productName: "Lead On Life",
-        productVersion: "1.9"
-      };
 
-      if (/iPhone|iPad|iPod|Android/i.test(navigator.userAgent)) {
-        container.className = "unity-mobile";
-        config.devicePixelRatio = 1;
-        canvas.style.height = "90%";
-      } else {
-        canvas.style.width = "100%";
-        canvas.style.height = "100%";
-      }
-      canvas.style.background = "url('" + buildUrl + "/') center / cover";
-      loadingBar.style.display = "block";
+    <script>
+      var container = document.querySelector("#main-container");
+      var loadingBar = document.querySelector("#main-loading-bar");
+      var progressBarFull = document.querySelector("#main-progress-bar-full");
+      var buildUrl = "Build/";
+      var loaderUrl = buildUrl + "{{{LOADER_FILENAME}}}";
+      var config = {
+        dataUrl: buildUrl + "{{{DATA_FILENAME}}}",
+        frameworkUrl: buildUrl + "{{{FRAMEWORK_FILENAME}}}",
+        codeUrl: buildUrl + "{{{CODE_FILENAME}}}",
+        streamingAssetsUrl: "StreamingAssets",
+        companyName: "{{{COMPANY_NAME}}}",
+        productName: "{{{PRODUCT_NAME}}}",
+        productVersion: "{{{PRODUCT_VERSION}}}"
+      };
 
       var script = document.createElement("script");
       script.src = loaderUrl;
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
-        }).then((unityInstance) => {
+        }).then((mainInstance) => {
           loadingBar.style.display = "none";
         }).catch((message) => {
           alert(message);
