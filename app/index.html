@@ -12,6 +12,7 @@
 
   <body>
     <div id="main-container">
+      <canvas id="main-canvas"></canvas>
       <div id="main-loading-bar">
         <div class="Logo">
             <img src="./TemplateData/Logo_Text.png">
@@ -24,7 +25,7 @@
     </div>
 
     <script>
-      var container = document.querySelector("#main-container");
+      var canvas = document.querySelector("#main-canvas");
       var loadingBar = document.querySelector("#main-loading-bar");
       var progressBarFull = document.querySelector("#main-progress-bar-full");
       var buildUrl = "Build/";
@@ -38,6 +39,11 @@
         productName: "Lead On Life",
         productVersion: "1.9"
       };
+		
+      canvas.style.width = "100%";
+      canvas.style.height = "100%";
+      canvas.style.background = "url('" + buildUrl + "/') center / cover";
+      loadingBar.style.display = "block";
 
       var script = document.createElement("script");
       script.src = loaderUrl;
