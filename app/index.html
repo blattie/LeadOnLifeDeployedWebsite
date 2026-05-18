@@ -12,6 +12,7 @@
 
   <body>
     <div id="main-container">
+      <canvas id="unity-canvas"></canvas>
       <div id="main-loading-bar">
         <div class="Logo">
             <img src="./TemplateData/Logo_Text.png">
@@ -44,7 +45,7 @@
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
-        }).then((mainInstance) => {
+        }).then((unityInstance) => {
           loadingBar.style.display = "none";
         }).catch((message) => {
           alert(message);
