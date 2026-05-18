@@ -1,5 +1,4 @@
 body {
-    padding: auto;
     margin: 0;
     overflow: hidden;
 }
@@ -7,7 +6,6 @@ body {
 #main-container {
     width: 100vw;
     height: 100vh;
-    padding: auto;
     margin: auto;
     background-image: url("./clouds2.webp");
     background-size: cover;
