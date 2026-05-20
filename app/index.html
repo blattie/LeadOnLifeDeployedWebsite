@@ -2,7 +2,6 @@
 <html lang="en-us">
   <head>
     <meta charset="utf-8">
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     <meta name="viewport" content="viewport-fit: cover" />
 
     <title>Lead On Life</title>
@@ -15,7 +14,7 @@
       <canvas id="main-canvas"></canvas>
       <div id="main-loading-bar">
         <div class="Logo">
-            <img src="./TemplateData/Logo_Text.png">
+            <img src="./TemplateData/Logo_Text.png" alt="Lead On Life Logo">
         </div>
         <div id="main-progress-bar-empty">
           <div id="main-progress-bar-full">
@@ -29,20 +28,20 @@
       var loadingBar = document.querySelector("#main-loading-bar");
       var progressBarFull = document.querySelector("#main-progress-bar-full");
       var buildUrl = "Build/";
-      var loaderUrl = buildUrl + "ef39ac50a0872407cd87f63d9126dd62.loader.js";
+      var loaderUrl = buildUrl + "c084286ab3748c2ebf70bd9dcb31f7d8.loader.js";
       var config = {
-        dataUrl: buildUrl + "b617f99b7ec8d7e094547080506a36f8.data",
+        dataUrl: buildUrl + "0af572c7ad147864477025957ce13141.data",
         frameworkUrl: buildUrl + "c4c6a42ec6737fb9fc0179c061c375e0.framework.js",
-        codeUrl: buildUrl + "cd81a710d75c64a21f8d2eae8bbdfa1a.wasm",
+        codeUrl: buildUrl + "1d503f9652585509ecae5e95842a5ea7.wasm",
         streamingAssetsUrl: "StreamingAssets",
         companyName: "Samuel Savaria",
         productName: "Lead On Life",
         productVersion: "1.9"
       };
-		
+      
       canvas.style.width = "100%";
       canvas.style.height = "100%";
-      canvas.style.background = "url('" + buildUrl + "/') center / cover";
+      canvas.style.display = "none";
       loadingBar.style.display = "block";
 
       var script = document.createElement("script");
@@ -50,8 +49,9 @@
       script.onload = () => {
         createUnityInstance(canvas, config, (progress) => {
           progressBarFull.style.width = 100 * progress + "%";
-        }).then((mainInstance) => {
+        }).then((unityInstance) => {
           loadingBar.style.display = "none";
+          canvas.style.display = "block";
         }).catch((message) => {
           alert(message);
         });

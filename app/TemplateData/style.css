@@ -4,10 +4,11 @@ body {
 }
 
 #main-container {
+    display: flex;
     width: 100vw;
     height: 100vh;
     margin: auto;
-    background-image: url("./clouds2.webp");
+    background-image: url("./Web_Background.webp");
     background-size: cover;
     background-position: center;
 }
@@ -23,7 +24,6 @@ body {
     margin: auto;
     width: 200px;
     height: 200px;
-    display: none;
 }
 
 #main-progress-bar-empty {
